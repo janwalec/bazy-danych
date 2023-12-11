@@ -35,7 +35,6 @@ CREATE TABLE panstwa (
     --FOREIGN KEY (lezy_na) REFERENCES kontynenty(nazwa_kontynentu),
     --FOREIGN KEY (ma_dostep_do_oceanu) REFERENCES oceany(nazwa_oceanu),
     --FOREIGN KEY (ma_dostep_do_morza) REFERENCES morza(nazwa_morza)
-
 );
 
 CREATE TABLE rzeki (
