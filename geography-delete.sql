@@ -1,0 +1,1 @@
+DELETE FROM szczyty_gorskie where nazwa_szczytu = 'Feldberg';

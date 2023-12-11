@@ -223,4 +223,139 @@ VALUES
     ('Japonia','Ocean spokojny'),
     ('Filipiny','Ocean spokojny')
     
-    
+INSERT INTO panstwa_morza
+    (nazwa_panstwa, nazwa_morza)
+VALUES
+    ('USA','Morze Hudsona'),
+    ('USA','Morze Karaibskie'),
+    ('Meksyk','Morze Karaibskie'),
+    ('Australia','Morze Tasmana'),
+    ('Hiszpania','Morze Śródziemne'),
+    ('Włochy','Morze Śródziemne'),
+    ('Hiszpania','Morze Północne'),
+    ('Francja','Morze Śródziemne'),
+    ('Wielka Brytania','Morze Północne'),
+    ('Francja','Morze Północne'),
+    ('Niemcy','Morze Północne'),
+    ('Niemcy','Morze Bałtyckie'),
+    ('Belgia','Morze Północne'),
+    ('Kanada','Morze Hudsona'),
+    ('Kolumbia','Morze Karaibskie'),
+    ('Ekwador','Morze Karaibskie'),
+    ('Chiny','Morze Południowochińskie'),
+    ('Filipiny','Morze Południowochińskie'),
+    ('Japonia','Morze Japońskie'),
+    ('Filipiny','Morze Filipińskie'),
+    ('Japonia','Morze Filipińskie')
+
+INSERT INTO pasma_gorskie
+    (nazwa_pasma, dlugosc_pasma)
+VALUES
+    ('Góry Skaliste', 4800),
+    ('Alpy Australijskie', 300),
+    ('Pireneje', 450),
+    ('Góry Ural', 2100),
+    ('Grampiany', 100),
+    ('Schwarzwald', 160),
+    ('Alpy', 1200),
+    ('Sudety', 300),
+    ('Kordyliery', 8000),
+    ('Andy', 9000),
+    ('Góry Matopo', 100),
+    ('Himalaje', 2500),
+    ('Alpy Japońskie', 750)
+
+INSERT INTO szczyty_gorskie
+    (nazwa_szczytu, wysokosc, lezy_na)
+VALUES
+    ('Mount Elbert', 4401, 'Góry Skaliste'),
+    ('Góra Kościuszki', 2228, 'Alpy Australijskie'),
+    ('Pico de Aneto', 3404, 'Pireneje'),
+    ('Narodnaja', 1895, 'Góry Ural'),
+    ('Ben Nevis', 1345, 'Grampiany'),
+    ('Feldberg', 1493, 'Schwarzwald'),
+    ('Mont Blanc', 4808, 'Alpy'),
+    ('Śnieżka', 1603, 'Sudety'),
+    ('McKinley', 6190, 'Kordyliery'),
+    ('Aconcagua', 6961, 'Andy'),
+    ('Gulati', 1549, 'Góry Matopo'),
+    ('Mount Everest', 8848, 'Himalaje'),
+    ('Kita', 3193, 'Alpy Japońskie')
+
+
+INSERT INTO pasma_panstwa
+    (nazwa_pasma, nazwa_panstwa)
+VALUES
+    ('Góry Skaliste', 'USA'),
+    ('Alpy Australijskie', 'Australia'),
+    ('Pireneje', 'Hiszpania'),
+    ('Pireneje', 'Francja'),
+    ('Góry Ural', 'Rosja'),
+    ('Grampiany', 'Wielka Brytania'),
+    ('Schwarzwald', 'Niemcy'),
+    ('Alpy', 'Francja'),
+    ('Alpy', 'Włochy'),
+    ('Alpy', 'Niemcy'),
+    ('Alpy', 'Austria'),
+    ('Sudety', 'Niemcy'),
+    ('Sudety', 'Czechy'),
+    ('Kordyliery', 'USA'),
+    ('Kordyliery', 'Meksyk'),
+    ('Kordyliery', 'Kanada'),
+    ('Andy', 'Ekwador'),
+    ('Andy', 'Kolumbia'),
+    ('Góry Matopo', 'Zimbabwe'),
+    ('Himalaje', 'Chiny'),
+    ('Alpy Japońskie', 'Japonia')
+
+INSERT INTO rzeki
+    (nazwa_rzeki, dlugosc_rzeki, wpada_do_morza, wpada_do_oceanu)
+VALUES
+    ('Missisipi', 3730, 'Morze Karaibskie', NULL),
+    ('Rio Grande', 3108, 'Morze Karaibskie', NULL),
+    ('Murray', 2508, NULL, 'Ocean indyjski'),
+    ('Limpopo', 1750, NULL, 'Ocean indyjski'),
+    ('Tag', 1007, 'Morze Śródziemne', NULL),
+    ('Wołga', 3692, NULL, NULL),
+    ('Tamiza', 215, 'Morze Północne', NULL),
+    ('Sekwana', 776, 'Morze Północne', NULL),
+    ('Moza', 925, 'Morze Północne', NULL),
+    ('Ren', 1233, 'Morze Północne', NULL),
+    ('Wełtawa', 433, 'Morze Północne', NULL),
+    ('Jukon', 3185, NULL, 'Ocean arktyczny'),
+    ('Magdalena', 1528, 'Morze Karaibskie', NULL),
+    ('Amazonka', 6400, NULL, 'Ocean atlantycki'),
+    ('Okawango', 1600, NULL, NULL),
+    ('Zambezi', 2574, NULL, 'Ocean indyjski'),
+    ('Jangcy', 6300, 'Morze Wschodniochińskie', NULL),
+    ('Shinano', 367, 'Morze Japońskie', NULL),
+    ('Cagayan', 505, 'Morze Filipińskie', NULL)
+
+INSERT INTO rzeki_panstwa
+    (nazwa_panstwa, nazwa_rzeki)
+VALUES
+    ('USA', 'Missisipi'),
+    ('USA', 'Rio Grande'),
+    ('Meksyk', 'Rio Grande'),
+    ('Australia', 'Murray'),
+    ('RPA', 'Limpopo'),
+    ('Zimbabwe', 'Limpopo'),
+    ('Hiszpania', 'Tag'),
+    ('Rosja', 'Wołga'),
+    ('Wielka Brytania', 'Tamiza'),
+    ('Francja', 'Sekwana'),
+    ('Francja', 'Ren'),
+    ('Austria', 'Ren'),
+    ('Francja', 'Moza'),
+    ('Belgia', 'Moza'),
+    ('Niemcy', 'Ren'),
+    ('Szwajcaria', 'Ren'),
+    ('Czechy', 'Wełtawa'),
+    ('Kanada', 'Jukon'),
+    ('Kolumbia', 'Magdalena'),
+    ('Kolumbia', 'Amazonka'),
+    ('Botswana', 'Okawango'),
+    ('Botswana', 'Zambezi'),
+    ('Chiny', 'Jangcy'),
+    ('Japonia', 'Shinano'),
+    ('Filipiny', 'Cagayan')

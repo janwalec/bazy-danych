@@ -40,8 +40,9 @@ CREATE TABLE panstwa (
 CREATE TABLE rzeki (
     nazwa_rzeki NVARCHAR (100) PRIMARY KEY,
     dlugosc_rzeki BIGINT NOT NULL,
-    wpada_do NVARCHAR (100) NOT NULL FOREIGN KEY (wpada_do) REFERENCES morza(nazwa_morza),
-    plynie_przez NVARCHAR (100) NOT NULL FOREIGN KEY (plynie_przez) REFERENCES panstwa(nazwa_panstwa),
+    wpada_do_morza NVARCHAR (100) FOREIGN KEY (wpada_do_morza) REFERENCES morza(nazwa_morza),
+    wpada_do_oceanu NVARCHAR (100) FOREIGN KEY (wpada_do_oceanu) REFERENCES oceany(nazwa_oceanu)
+    --plynie_przez NVARCHAR (100) NOT NULL FOREIGN KEY (plynie_przez) REFERENCES panstwa(nazwa_panstwa),
 );
 
 CREATE TABLE miasta (
@@ -55,12 +56,12 @@ CREATE TABLE miasta (
 CREATE TABLE pasma_gorskie (
     nazwa_pasma NVARCHAR (100) PRIMARY KEY,
     dlugosc_pasma BIGINT NOT NULL,
-    jest_w NVARCHAR (100) NOT NULL FOREIGN KEY (jest_w) REFERENCES panstwa(nazwa_panstwa),
+    --jest_w NVARCHAR (100) NOT NULL FOREIGN KEY (jest_w) REFERENCES panstwa(nazwa_panstwa),
 );
 
 CREATE TABLE szczyty_gorskie (
     nazwa_szczytu NVARCHAR (100) PRIMARY KEY,
-    wysokosc BIGINT NOT NULL,
+    wysokosc INT NOT NULL,
     lezy_na NVARCHAR (100) NOT NULL FOREIGN KEY (lezy_na) REFERENCES pasma_gorskie(nazwa_pasma)
 );
 
@@ -92,8 +93,8 @@ CREATE TABLE panstwa_sasiedzi (
 
 CREATE TABLE rzeki_panstwa (
     nazwa_panstwa NVARCHAR (100) NOT NULL FOREIGN KEY (nazwa_panstwa) REFERENCES panstwa(nazwa_panstwa),
-    nazwa_morza NVARCHAR (100) NOT NULL FOREIGN KEY (nazwa_morza) REFERENCES morza(nazwa_morza),
-    PRIMARY KEY (nazwa_panstwa, nazwa_morza)
+    nazwa_rzeki NVARCHAR (100) NOT NULL FOREIGN KEY (nazwa_rzeki) REFERENCES rzeki(nazwa_rzeki),
+    PRIMARY KEY (nazwa_panstwa, nazwa_rzeki)
 );
 
 CREATE TABLE kontynenty_oceany (
