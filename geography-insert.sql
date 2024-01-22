@@ -8,6 +8,17 @@ VALUES
     ('Australia i Oceania', 8500000, 41000000, 14),
     ('Afryka', 30370000, 1370000000, 54),
     ('Antarktyda', 14000000, 1000, 0)
+	
+INSERT INTO kontynenty_id
+	(nazwa_kontynentu, id)
+VALUES
+	('Europa', 1),
+    ('Azja', 2),
+    ('Ameryka północna', 3),
+    ('Ameryka południowa', 4),
+    ('Australia i Oceania', 5),
+    ('Afryka', 6),
+    ('Antarktyda', 7)
 
 INSERT INTO oceany
     (nazwa_oceanu, powierzchnia)
@@ -19,27 +30,27 @@ VALUES
     ('Ocean arktyczny', 14060000)
 
 INSERT INTO kontynenty_oceany
-    (nazwa_kontynentu, nazwa_oceanu)
+    (ID_KONTYNENTU, nazwa_oceanu)
 VALUES
-    ('Azja', 'Ocean spokojny'),
-    ('Ameryka południowa', 'Ocean spokojny'),
-    ('Ameryka północna', 'Ocean spokojny'),
-    ('Australia i Oceania', 'Ocean spokojny'),
+    (2, 'Ocean spokojny'),
+    (4, 'Ocean spokojny'),
+    (3, 'Ocean spokojny'),
+    (5, 'Ocean spokojny'),
    
-    ('Ameryka południowa', 'Ocean atlantycki'),
-    ('Europa', 'Ocean atlantycki'),
-    ('Afryka', 'Ocean atlantycki'),
+    (4, 'Ocean atlantycki'),
+    (1, 'Ocean atlantycki'),
+    (6, 'Ocean atlantycki'),
    
-    ('Afryka', 'Ocean indyjski'),
-    ('Azja', 'Ocean indyjski'),
-    ('Australia i Oceania', 'Ocean indyjski'),
-    ('Antarktyda', 'Ocean indyjski'),
+    (6, 'Ocean indyjski'),
+    (2, 'Ocean indyjski'),
+    (5, 'Ocean indyjski'),
+    (7, 'Ocean indyjski'),
    
-    ('Antarktyda', 'Ocean antarktyczny'),
+    (7, 'Ocean antarktyczny'),
    
-    ('Azja', 'Ocean arktyczny'),
-    ('Europa', 'Ocean arktyczny'),
-    ('Ameryka północna', 'Ocean arktyczny')
+    (2, 'Ocean arktyczny'),
+    (1, 'Ocean arktyczny'),
+    (3, 'Ocean arktyczny')
    
     
 INSERT INTO morza
@@ -55,7 +66,6 @@ VALUES
     ('Morze Irlandzkie', 425000 ,0, 'Ocean atlantycki'),
     ('Morze Karaibskie', 2750000 ,0, 'Ocean atlantycki'),
     ('Morze Arabskie', 3800000 ,0, 'Ocean indyjski'),
-    ('Morze Andamańskie', 797000 ,0, 'Ocean indyjski'),
     ('Morze Japońskie', 1000000 ,0, 'Ocean spokojny'),
     ('Morze Wschodniochińskie', 1200000 ,0, 'Ocean spokojny'),
     ('Morze Filipińskie', 5000000 ,0, 'Ocean spokojny'),
@@ -95,31 +105,31 @@ VALUES
     ('Włochy', 0, 1900000000000, 60400000)
 
 INSERT INTO kontynenty_panstwa
-    (nazwa_panstwa, nazwa_kontynentu)
+    (nazwa_panstwa, ID_KONTYNENTU)
 VALUES
-    ('USA', 'Ameryka północna'),
-    ('Meksyk', 'Ameryka północna'),
-    ('Australia', 'Australia i Oceania'),
-    ('RPA', 'Afryka'),
-    ('Hiszpania', 'Europa'),
-    ('Rosja', 'Europa'),
-    ('Rosja', 'Azja'),
-    ('Wielka Brytania', 'Europa'),
-    ('Francja', 'Europa'),
-    ('Niemcy', 'Europa'),
-    ('Belgia', 'Europa'),
-    ('Szwajcaria', 'Europa'),
-    ('Czechy', 'Europa'),
-    ('Kanada', 'Ameryka północna'),
-    ('Kolumbia', 'Ameryka południowa'),
-    ('Ekwador', 'Ameryka południowa'),
-    ('Botswana', 'Afryka'),
-    ('Zimbabwe', 'Afryka'),
-    ('Chiny', 'Azja'),
-    ('Japonia', 'Azja'),
-    ('Filipiny', 'Australia i Oceania'),
-    ('Austria', 'Europa'),
-    ('Włochy', 'Europa')
+    ('USA', 3),
+    ('Meksyk', 3),
+    ('Australia', 5),
+    ('RPA', 6),
+    ('Hiszpania', 1),
+    ('Rosja', 1),
+    ('Rosja', 2),
+    ('Wielka Brytania', 1),
+    ('Francja', 1),
+    ('Niemcy', 1),
+    ('Belgia', 1),
+    ('Szwajcaria', 1),
+    ('Czechy', 1),
+    ('Kanada', 3),
+    ('Kolumbia', 4),
+    ('Ekwador', 4),
+    ('Botswana', 6),
+    ('Zimbabwe', 6),
+    ('Chiny', 2),
+    ('Japonia', 2),
+    ('Filipiny', 5),
+    ('Austria', 1),
+    ('Włochy', 1)
 
 INSERT INTO panstwa_sasiedzi
     (nazwa_panstwa1, nazwa_panstwa2)
@@ -173,29 +183,29 @@ VALUES
     ('Hiroszima', 907, 1100000, 0, 'Japonia')
 
 INSERT INTO kontynenty_morza
-    (nazwa_kontynentu, nazwa_morza)
+    (ID_KONTYNENTU, nazwa_morza)
 VALUES
-    ('Europa', 'Morze Bałtyckie'),
-    ('Europa', 'Morze Czarne'),
-    ('Europa', 'Morze Północne'),
-    ('Europa', 'Morze Norweskie'),
-    ('Europa', 'Morze Irlandzkie'),
-    ('Europa', 'Morze Egejskie'),
-    ('Europa', 'Morze Jońskie'),
-    ('Europa', 'Morze Barentsa'),
-    ('Europa', 'Morze Śródziemne'),
-    ('Azja', 'Morze Czerwone'),
-    ('Azja', 'Morze Wschodniochińskie'),
-    ('Azja', 'Morze Filipińskie'),
-    ('Azja', 'Morze Andamanskie'),
-    ('Azja', 'Morze Południowochińskie'),
-    ('Azja', 'Morze Śródziemne'),
-    ('Ameryka północna', 'Morze Hudsona'),
-    ('Ameryka północna', 'Morze Karaibskie'),
-    ('Australia i Oceania', 'Morze Tasmana'),
-    ('Australia i Oceania', 'Morze Arafura'),
-    ('Afryka', 'Morze Śródziemne'),
-    ('Afryka', 'Morze Czerwone')
+    (1, 'Morze Bałtyckie'),
+    (1, 'Morze Czarne'),
+    (1, 'Morze Północne'),
+    (1, 'Morze Norweskie'),
+    (1, 'Morze Irlandzkie'),
+    (1, 'Morze Egejskie'),
+    (1, 'Morze Jońskie'),
+    (1, 'Morze Barentsa'),
+    (1, 'Morze Śródziemne'),
+    (2, 'Morze Czerwone'),
+    (2, 'Morze Wschodniochińskie'),
+    (2, 'Morze Filipińskie'),
+    (2, 'Morze Andamanskie'),
+    (2, 'Morze Południowochińskie'),
+    (2, 'Morze Śródziemne'),
+    (3, 'Morze Hudsona'),
+    (3, 'Morze Karaibskie'),
+    (5, 'Morze Tasmana'),
+    (5, 'Morze Arafura'),
+    (6, 'Morze Śródziemne'),
+    (6, 'Morze Czerwone')
 
 INSERT INTO panstwa_oceany
     (nazwa_panstwa, nazwa_oceanu)
@@ -329,7 +339,8 @@ VALUES
     ('Zambezi', 2574, NULL, 'Ocean indyjski'),
     ('Jangcy', 6300, 'Morze Wschodniochińskie', NULL),
     ('Shinano', 367, 'Morze Japońskie', NULL),
-    ('Cagayan', 505, 'Morze Filipińskie', NULL)
+    ('Cagayan', 505, 'Morze Filipińskie', NULL),
+    ('drugiarzeka', 505, 'Morze Filipińskie', NULL)
 
 INSERT INTO rzeki_panstwa
     (nazwa_panstwa, nazwa_rzeki)
@@ -358,4 +369,5 @@ VALUES
     ('Botswana', 'Zambezi'),
     ('Chiny', 'Jangcy'),
     ('Japonia', 'Shinano'),
-    ('Filipiny', 'Cagayan')
+    ('Filipiny', 'Cagayan'),
+    ('Filipiny', 'drugiarzeka')

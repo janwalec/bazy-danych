@@ -5,6 +5,11 @@ CREATE TABLE kontynenty (
     liczba_panstw INT NOT NULL,
 );
 
+CREATE TABLE kontynenty_id (
+	nazwa_kontynentu NVARCHAR (100) FOREIGN KEY (nazwa_kontynentu) REFERENCES kontynenty(nazwa_kontynentu),
+	id INT PRIMARY KEY
+);
+
 CREATE TABLE oceany (
     nazwa_oceanu NVARCHAR (100) PRIMARY KEY,
     powierzchnia BIGINT NOT NULL,
@@ -68,15 +73,17 @@ CREATE TABLE szczyty_gorskie (
 --relacje wiele do wielu
 
 CREATE TABLE kontynenty_panstwa (
-    nazwa_panstwa NVARCHAR (100) NOT NULL FOREIGN KEY (nazwa_panstwa) REFERENCES panstwa(nazwa_panstwa),
-    nazwa_kontynentu NVARCHAR (100) NOT NULL FOREIGN KEY (nazwa_kontynentu) REFERENCES kontynenty(nazwa_kontynentu),
-	PRIMARY KEY (nazwa_panstwa, nazwa_kontynentu)
+    nazwa_panstwa NVARCHAR (100) NOT NULL,
+	FOREIGN KEY (nazwa_panstwa) REFERENCES panstwa(nazwa_panstwa),
+    ID_KONTYNENTU INT NOT NULL,
+	FOREIGN KEY (ID_KONTYNENTU) REFERENCES kontynenty_id(id),
+	PRIMARY KEY (nazwa_panstwa, ID_KONTYNENTU)
 );
 
 CREATE TABLE kontynenty_morza (
-    nazwa_kontynentu NVARCHAR (100) NOT NULL FOREIGN KEY (nazwa_kontynentu) REFERENCES kontynenty(nazwa_kontynentu),
+    ID_KONTYNENTU INT NOT NULL FOREIGN KEY (ID_KONTYNENTU) REFERENCES kontynenty_id(id),
     nazwa_morza NVARCHAR (100) NOT NULL FOREIGN KEY (nazwa_morza) REFERENCES morza(nazwa_morza),
-    PRIMARY KEY (nazwa_kontynentu, nazwa_morza)
+    PRIMARY KEY (ID_KONTYNENTU, nazwa_morza)
 );
 
 CREATE TABLE panstwa_morza (
@@ -98,9 +105,9 @@ CREATE TABLE rzeki_panstwa (
 );
 
 CREATE TABLE kontynenty_oceany (
-    nazwa_kontynentu NVARCHAR (100) NOT NULL FOREIGN KEY (nazwa_kontynentu) REFERENCES kontynenty(nazwa_kontynentu),
+    ID_KONTYNENTU INT NOT NULL FOREIGN KEY (ID_KONTYNENTU) REFERENCES kontynenty_id(id),
     nazwa_oceanu NVARCHAR (100) NOT NULL FOREIGN KEY (nazwa_oceanu) REFERENCES oceany(nazwa_oceanu),
-    PRIMARY KEY (nazwa_kontynentu, nazwa_oceanu)
+    PRIMARY KEY (ID_KONTYNENTU, nazwa_oceanu)
 );
 
 CREATE TABLE pasma_panstwa (
